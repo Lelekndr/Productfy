@@ -32,9 +32,7 @@ export const products = pgTable("products", {
         .defaultNow()
         .notNull(),
 
-    updateAt: timestamp("updated_at", { mode: "date" })
-        .defaultNow()
-        .notNull(),
+    updatedAt: timestamp("updated_at", { mode: "date" }).notNull().defaultNow().$onUpdate(() => new Date()),
 });
 
 /*
