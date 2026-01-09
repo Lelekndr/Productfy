@@ -20,4 +20,9 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(ENV.PORT, () => console.log("Server is running on port:", ENV.PORT));
+app.listen(ENV.PORT, () => {
+  console.log("Server is running on port:", ENV.PORT);
+}).on("error", (err: Error) => {
+  console.error("Failed to start server:", err);
+  process.exit(1);
+});

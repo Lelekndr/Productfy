@@ -1,6 +1,6 @@
 // Importa a função drizzle para criar a instância do ORM
 // Essa versão é específica para PostgreSQL
-import { drizzle } from "drizzle-orm/postgres-js";
+import { drizzle } from "drizzle-orm/node-postgres";
 
 // Importa o Pool do pacote pg
 // Pool gerencia múltiplas conexões com o banco de dados
@@ -8,10 +8,10 @@ import { Pool } from "pg";
 
 // Importa todo o schema do banco (tabelas + relações)
 // Isso permite que o Drizzle conheça a estrutura do banco
-import * as schema from "./schema.js";
+import * as schema from "./schema";
 
 // Importa as variáveis de ambiente (DATABASE_URL, PORT, etc.)
-import { ENV } from "../config/env.js";
+import { ENV } from "../config/env";
 
 
 // Verifica se a variável DATABASE_URL existe
