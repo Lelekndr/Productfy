@@ -7,7 +7,7 @@ import productRoutes from "./routes/productRoutes";
 import commentRoutes from "./routes/commentRoutes";
 
 const app = express();
-app.use(cors({origin: ENV.FRONTEND_URL}))
+app.use(cors({origin: ENV.FRONTEND_URL, credentials:true})); //credentials:true to allow cookies to be sent from frontend to backend so that we can authenticate the user with Clerk
 app.use(clerkMiddleware())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
